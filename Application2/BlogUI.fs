@@ -60,10 +60,10 @@ module BlogUI =
         let Doc'Map<'A> (view:View<'A>) f = 
             View.Map f view |> Doc.EmbedView
 
-        let input'area'auto'grow'height () (handler: JavaScript.Dom.Element -> Unit) =
-            JQuery.JQuery.Of(".edit-post-input-area").Each( fun x -> 
-                x.SetAttribute( "style", "height:5px")                                    
-                x.SetAttribute( "style", "height:" + (max x.ScrollHeight 300.).ToString() +  "px")) |> ignore    
+        //let input'area'auto'grow'height () (handler: JavaScript.Dom.Element -> Unit) =
+        //    JQuery.JQuery.Of(".edit-post-input-area").Each( fun x -> 
+        //        x.SetAttribute( "style", "height:5px")                                    
+        //        x.SetAttribute( "style", "height:" + (max x.ScrollHeight 300.).ToString() +  "px")) |> ignore    
 
         let var'str'to'int'view def =            
             Var.Create <| function
