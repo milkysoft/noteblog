@@ -96,16 +96,11 @@
       view=post.IsEditMode.get_View();
       return Html.Article(List.ofArray([Attr.Create("id","post-"+Global.String(post.Id)+"-article")]),List.ofArray([Html.Div(List.ofArray([Attr.Class("post-header-block")]),List.ofArray([Html.Div(List.ofArray([Attr.Class("post-title-text-block")]),List.ofArray([Doc.TextView(post.Title.get_View())])),Render["render'post'date"](post),Render["render'post'crud'panel"](blog,post)])),Util["Doc'Map"](view,function(_arg1)
       {
-       var arg10,arg101,doc,f;
+       var arg10,f;
        if(_arg1)
         {
          arg10=post.EditedTitle;
-         arg101=post.EditedContent;
-         doc=Doc.InputArea(List.ofArray([Attr.Class("edit-post-input-area")]),arg101);
-         return Html.Div0(List.ofArray([Html.P0(List.ofArray([Util.txt("\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u044c\u0438"),Html.Div0(List.ofArray([Doc.Input(List.ofArray([Attr.Style("width","100%")]),arg10)]))])),Html.P0(List.ofArray([Util.txt("\u0422\u0435\u043a\u0441\u0442 \u0441\u0442\u0430\u0442\u044c\u0438"),Html.Div0(List.ofArray([Util.addViewListener(post.EditedContent.get_View(),function()
-         {
-          return Util["input'area'auto'grow'height"]();
-         },doc)]))]))]));
+         return Html.Div0(List.ofArray([Html.P0(List.ofArray([Util.txt("\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u044c\u0438"),Html.Div0(List.ofArray([Doc.Input(List.ofArray([Attr.Style("width","100%")]),arg10)]))])),Html.P0(List.ofArray([Util.txt("\u0422\u0435\u043a\u0441\u0442 \u0441\u0442\u0430\u0442\u044c\u0438")]))]));
         }
        else
         {

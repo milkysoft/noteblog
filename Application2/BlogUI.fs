@@ -60,7 +60,7 @@ module BlogUI =
         let Doc'Map<'A> (view:View<'A>) f = 
             View.Map f view |> Doc.EmbedView
 
-        let input'area'auto'grow'height () =             
+        let input'area'auto'grow'height () (unit) =
             JQuery.JQuery.Of(".edit-post-input-area").Each( fun x -> 
                 x.SetAttribute( "style", "height:5px")                                    
                 x.SetAttribute( "style", "height:" + (max x.ScrollHeight 300.).ToString() +  "px")) |> ignore    
@@ -175,10 +175,10 @@ module BlogUI =
                     Div0[
                         P0[ txt "Название статьи"
                             Div0[ Doc.Input [ Attr.Style "width" "100%" ] post.EditedTitle ] ]
-                        P0[ txt "Текст статьи"; 
-                            Div0[ Doc.InputArea 
-                                    [ Attr.Class "edit-post-input-area"] post.EditedContent
-                                    |> addViewListener post.EditedContent.View (fun x -> input'area'auto'grow'height() ) ]] ]]         
+                        P0[ txt "Текст статьи" ] ]]; 
+                            //Div0[ Doc.InputArea 
+                            //        [ Attr.Class "edit-post-input-area"] post.EditedContent
+                            //        |> addViewListener post.EditedContent.View (fun x -> input'area'auto'grow'height() ) ]] ]]         
 
     let Blog is'admin =
         let var'page'number = Var.Create "0"
